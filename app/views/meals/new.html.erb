@@ -1,0 +1,15 @@
+<h1>Create a new meal</h1>
+
+<%= form_with model: @meal, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+   <div class="category-input">
+      <%= form.label :icon, class: 'input-label' %>
+      <%= form.url_field :icon, class: 'input-field', placeholder: 'Put your image url here' %>
+    </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Meal Categories</h1>
+
+<section class="meal-container">
+  <% @meals.each do |meal| %>
+
+    <a href=<%= meal_orders_path(meal) %>>
+      <div class="meal-card">
+        <div>
+          <%= image_tag meal.icon, alt: meal.name, class: "meal-icon" %>
+        </div>
+
+        <div>
+          <h2><%= meal.name %></h2>
+        </div>
+
+        <div>
+          <h2>$<%= meal.orders.sum(:amount) %></h2>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</section>
+
+<%= link_to "New Meal", new_meal_path %> 

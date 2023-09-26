@@ -1,0 +1,16 @@
+<div class="meal-card">
+  <div>
+    <%= image_tag @meal.icon, alt: @meal.name, class: "meal-icon" %>
+  </div>
+  <div>
+    <h2><%= link_to @meal.name, @meal %></h2>
+  </div>
+  <div>
+    <h2>$<%= @meal.orders.sum(:amount) %></h2>
+  </div>
+</div>
+
+<%# link to all previous orders for this meal %>
+<p><%= link_to "See all orders for this meal", meal_orders_path(@meal) %></p>
+
+<p><%= link_to "Back", meals_path %></p>
