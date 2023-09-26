@@ -1,0 +1,17 @@
+<h1>Order this meal</h1>
+
+<%= form_with(model: [@meal, @order], url: meal_orders_path(@meal), local: true) do |f| %>
+  <div>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, placeholder: 'Put transaction name here' %>
+  </div>
+
+  <div>
+    <%= f.label :amount, 'Amount' %>
+    <%= f.text_field :amount, placeholder: 'Put your amount here' %>
+  </div>
+
+  <div>
+    <%= f.submit 'Create Transaction', class: 'new-transaction-button' %>
+  </div>
+<% end %>

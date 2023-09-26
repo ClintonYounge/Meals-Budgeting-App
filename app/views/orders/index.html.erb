@@ -1,0 +1,18 @@
+<h1>Here are all your orders</h1>
+<p>Total spent: <%= @orders.sum(:amount) %></p>
+
+<section class="meal-container">
+  <% @orders.each do |order| %>
+    <div class="meal-card">
+      <div>
+        <h2><%= link_to order.meal.name, order.meal %></h2>
+      </div>
+      <div>
+        <h2>$<%= order.amount %></h2>
+      </div>
+    </div>
+  <% end %>
+</section>
+
+<p><%= link_to "Order this meal", new_meal_order_path(@meal) %></p>
+<p><%= link_to "Back", meals_path %></p>
