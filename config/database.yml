@@ -1,9 +1,17 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: Cjay_Vegan_Restaurant_development
+  database: Meals_Budgeting_App_development
   pool: 5
   host: localhost
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: Meals_Budgeting_App_test
+  pool: 5
   username: postgres
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
@@ -11,4 +19,4 @@ staging:
   url: <%= ENV['DATABASE_URL'] %>
 
 production:
-  url: <%= ENV['DATABASE_URL'] %> 
+  url: <%= ENV['DATzABASE_URL'] %> 
