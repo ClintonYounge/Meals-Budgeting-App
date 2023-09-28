@@ -9,7 +9,3 @@ services:
           name: my-database
           property: connectionString
     healthCheckPath: /healthcheck
-
-databases:
-  - name: my-database
-    plan: postgres
