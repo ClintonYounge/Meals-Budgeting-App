@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @meals = current_user.meals
   end
@@ -12,7 +12,7 @@ class MealsController < ApplicationController
   def create
     @meal = Meal.new(meal_params)
     @meal.author_id = current_user.id
-    
+
     if @meal.save
       redirect_to meals_path
     else

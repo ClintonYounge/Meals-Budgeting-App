@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,7 +5,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     if user.admin?
-        can :manage, :all
+      can :manage, :all
     else
       can :read, :all
       can :create, :all

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   load_and_authorize_resource
-  
-  before_action :find_meal, only: [:new, :create]
+
+  before_action :find_meal, only: %i[new create]
 
   def index
     @orders = Order.where(meal_id: params[:meal_id])
@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
   def find_meal
     @meal = Meal.find(params[:meal_id])
   end
-  
+
   def order_params
     params.require(:order).permit(:name, :amount)
   end

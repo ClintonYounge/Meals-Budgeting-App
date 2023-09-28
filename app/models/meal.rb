@@ -3,7 +3,7 @@ class Meal < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   validates :name, presence: true
-  
+
   def increase_amount
     increment!(:amount)
   end

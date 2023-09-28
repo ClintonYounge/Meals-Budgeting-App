@@ -35,6 +35,10 @@ header div p {
   margin-right: 20px;
 }
 
+button {
+  cursor: pointer;
+}
+
 header div button {
   cursor: pointer;
 }
@@ -100,7 +104,7 @@ header div button {
 }
 
 .delete-meal-btn {
-  background-color:#5fb523;
+  background-color: #5fb523;
   color: white;
   border: none;
   font-size: 15px;
@@ -118,8 +122,4 @@ header div button {
 .no-meals {
   font-size: 20px;
   text-align: center;
-}
-
-button {
-  cursor: pointer;
 }
