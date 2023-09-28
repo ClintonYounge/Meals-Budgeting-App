@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/assets/sign.css">
+  <%= stylesheet_link_tag 'application' %>
 </head>
 <body class="splash-container">
   <div class="header">
@@ -25,7 +25,7 @@
       </div>
     <% end %>
     
-    <p class="sign-message">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %></p>
+    <p class="sign-up">Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %></p>
   </div>
 </body>
 </html>

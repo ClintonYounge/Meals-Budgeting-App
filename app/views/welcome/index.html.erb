@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="/assets/splash.css">
-</head>
 <body class="splash-container">
   <div class="header">
     <h1>Welcome to the Meals Budgetting App</h1>
@@ -15,13 +12,4 @@
     <%= link_to "Sign In", new_user_session_path, class: "btn" %>
   </div>
 </body>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-      var signMessage = document.querySelector(".sign-message");
-      signMessage.style.opacity = "1";
-      signMessage.style.transform = "translateY(0)";
-    }, 1000);
-  });
-</script>
 </html>
