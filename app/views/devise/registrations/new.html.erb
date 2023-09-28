@@ -2,43 +2,32 @@
 <html>
 <head>
   <%= stylesheet_link_tag 'application' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body class="splash-container">
-  <div class="header">
-    <h1>Thank you for choosing us!</h1>
-  </div>
-
-  <p class="sign-message">Sign up below!</p>
-
-  <div class="cta-buttons">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-form' }) do |f| %>
+<body>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-form' }) do |f| %>
+  <header>
+    <div>
+      <%= link_to "<i class='fas fa-arrow-left go-back'></i>".html_safe, root_path %>
+      <p>Register</p>
+      <%= f.submit "Next", class: "sign-out" %>
+    </div>
+  </header>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.text_field :name, placeholder: "What's your name?", autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, placeholder: "Full Name", autofocus: true, autocomplete: "name" %>
       </div>
 
       <div class="field">
-        <%= f.email_field :email, placeholder: "What's your email", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, placeholder: "Make a strong password :D", autocomplete: "new-password" %>
-      </div>
-
-      <div class="field">
-        <%= f.password_field :password_confirmation, placeholder: "Password again here!", autocomplete: "new-password" %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up", class: "btn" %>
+        <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password" %>
       </div>
       
       <p class="login-btn">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %></p>
     <% end %>
-  </div>
 </body>
 </html>
