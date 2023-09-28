@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index]
     
-  resources :meals, only: [:index, :show, :new, :create] do
-    resources :orders, only: [:index, :show, :new, :create]
+  resources :meals do
+    resources :orders
   end
 end
