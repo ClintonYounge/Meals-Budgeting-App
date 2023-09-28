@@ -1,15 +1,19 @@
-name: postgres
-ipAllowList: []
-
 services:
-  type: web
-  name: rails
-  end: ruby
-  buildCommand: "./bin/render-build.sh"
-  startCommand: bundle exec rails s
-  
-  type: redis
-  name: redis
-  ipAllowList: []
-  plan: free
-  maxmemoryPolicy: noeviction
+  - name: Meals_Budgeting_App
+    type: web
+    buildCommand: ./build.sh
+    startCommand: ./start.sh
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: my-database
+          property: connectionString
+    healthCheckPath: /healthcheck
+    automaticTLS: true
+
+databases:
+  - name: my-database
+    plan: postgres
+    env:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: myuser
