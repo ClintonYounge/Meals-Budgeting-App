@@ -24,7 +24,7 @@
       </div>
       <% @orders.each do |order| %>
       <div class="order-details">
-        <p>Order #<%= order.id %></p>
+        <p>Order #<%= order.id %>- Spent: $<%= order.amount %></p>
         <p>Ordered on <%= order.created_at.strftime("%B %d, %Y") %></p>
       </div>
       <% end %>

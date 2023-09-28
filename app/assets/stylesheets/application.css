@@ -219,13 +219,12 @@ body {
 .splash-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   height: 100vh;
 }
 
 .splash-container h2 {
-  margin-top: 65%;
+  margin-top: 40vh;
   font-family: cursive;
 }
 
