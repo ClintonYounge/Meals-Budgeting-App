@@ -22,7 +22,7 @@
 
 # 📖 [Meals Budgeting App] <a name="about-project"></a>
 
-**[Meals Budgeting App]** Is an example of a budgetting app that keeps track of your spending on meals. It allows you to place orders for meals you've added. Original design idea by <a href="https://www.behance.net/gregoirevella">Gregoire Vella on Behance</a> 
+**[Meals Budgeting App]** Is an example of a budgetting app that keeps track of your spending on meals. It allows you to place orders for meals you've added.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -147,7 +147,7 @@ If you like this project feel free to leave a star to show your support.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to give thanks to Microverse for providing an environment that makes me strive to grow as developers.
+I would like to give thanks to Microverse for providing an environment that makes me strive to grow as developers. Original design idea by <a href="https://www.behance.net/gregoirevella">Gregoire Vella on Behance</a> 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
