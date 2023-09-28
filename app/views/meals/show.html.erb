@@ -1,16 +1,31 @@
-<div class="meal-card">
-  <div>
-    <%= image_tag @meal.icon, alt: @meal.name, class: "meal-icon" %>
-  </div>
-  <div>
-    <h2><%= link_to @meal.name, @meal %></h2>
-  </div>
-  <div>
-    <h2>$<%= @meal.orders.sum(:amount) %></h2>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/application.css">
+</head>
+<body class="home-page">
+  <header>
+    <div>
+       <p><%= link_to 'Go back', meal_orders_path(@meal), class: 'go-back' %></p>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+    </div>
+  </header>
 
-<%# link to all previous orders for this meal %>
-<p><%= link_to "See all orders for this meal", meal_orders_path(@meal) %></p>
+  <div class='meal-container'>
+    <h2 class="overview">Meal Overview</h2>
+    <div class="meal-card">
+      <div>
+        <%= image_tag @meal.icon, alt: @meal.name, class: "meal-icon" %>
+      </div>
+      <div>
+        <h2><%= link_to @meal.name, @meal, class: 'meal-name' %></h2>
+      </div>
+      <div>
+        <h2>$<%= @meal.orders.sum(:amount) %></h2>
+      </div>
+    </div>
+  </div>
 
-<p><%= link_to "Back", meals_path %></p>
+  <%= button_to 'Delete Meal', meal_path(@meal), method: :delete, class: 'delete-meal-btn' %>
+</body>
+</html>

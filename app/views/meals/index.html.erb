@@ -1,24 +1,42 @@
-<h1>Meal Categories</h1>
-
-<section class="meal-container">
-  <% @meals.each do |meal| %>
-
-    <a href=<%= meal_orders_path(meal) %>>
-      <div class="meal-card">
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+  <body class="home-page">
+    <header>
         <div>
-          <%= image_tag meal.icon, alt: meal.name, class: "meal-icon" %>
+          <p>Meals</p>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
         </div>
+    </header>
 
-        <div>
-          <h2><%= meal.name %></h2>
-        </div>
+    <section class="meal-container">
+      <% if @meals.length === 0 %>
+        <p class="no-meals">No meals yet! Feel free to add a meal.</p>
+      <% end %>
+      <% @meals.each do |meal| %>
 
-        <div>
-          <h2>$<%= meal.orders.sum(:amount) %></h2>
-        </div>
-      </div>
-    </a>
-  <% end %>
-</section>
+        <a href=<%= meal_orders_path(meal) %>>
+          <div class="meal-card">
+            <div>
+              <%= image_tag meal.icon, alt: meal.name, class: "meal-icon" %>
+            </div>
 
-<%= link_to "New Meal", new_meal_path %> 
+            <div>
+              <p class="meal-name"><%= meal.name %></p>
+            </div>
+
+            <div>
+              <p class="meal-total">$<%= meal.orders.sum(:amount) %></p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </section>
+
+    <p class='new-meal'><%= link_to "New Meal", new_meal_path, class: 'new-meal-btn' %></p>
+  </body>
+</html>
+
+

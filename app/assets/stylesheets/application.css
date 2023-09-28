@@ -1,15 +1,58 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  margin: 0;
   list-style: none;
   color: black;
 }
 
-.meal-container {
+.home-page {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #3778c2;
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+header div {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+
+header div p {
+  color: white;
+  margin-right: 20px;
+}
+
+header div button {
+  cursor: pointer;
+}
+
+.sign-out {
+  color: white;
+  background-color: #3778c2;
+  border: none;
+  font-size: 18px;
+}
+
+.meal-container {
+  margin-top: 30px;
+  height: 100%;
 }
 
 .meal-card {
+  background-color: white;
   width: 90%;
   margin: auto;
   border: 1px solid black;
@@ -17,9 +60,66 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  align-items: center;
+}
+
+.new-meal {
+  background-color: #5fb523;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.new-meal-btn {
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
 }
 
 .meal-icon {
-  width: 80px;
+  width: 100px;
   height: 100%;
+}
+
+.meal-name {
+  font-size: 15px;
+  color: #434b54;
+}
+
+.meal-total {
+  font-size: 20px;
+}
+
+.go-back {
+  font-size: 15px;
+  color: white;
+}
+
+.delete-meal-btn {
+  background-color:#5fb523;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.overview {
+  text-align: center;
+}
+
+.no-meals {
+  font-size: 20px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
 }
