@@ -1,6 +1,7 @@
 services:
   - name: Meals_Budgeting_App
     type: web
+    runtime: buildpack
     buildCommand: ./build.sh
     startCommand: ./start.sh
     envVars:
