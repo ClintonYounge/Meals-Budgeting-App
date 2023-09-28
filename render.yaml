@@ -2,10 +2,10 @@ databases:
   - name: postgres
     ipAllowList: []
 
-  services:
+services:
   - type: web
     name: rails
-    end: ruby
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
     envVars:
