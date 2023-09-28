@@ -4,6 +4,7 @@
   margin: 0;
   list-style: none;
   color: black;
+  font-family: cursive;
 }
 
 .home-page {
@@ -82,12 +83,12 @@ header div button {
 .new-meal-btn {
   border: 1px solid white;
   color: white;
-  padding: 10px;
+  padding: 10px 120px;
 }
 
 .meal-icon {
   width: 100px;
-  height: 100%;
+  height: 80px;
 }
 
 .meal-name {
@@ -100,7 +101,7 @@ header div button {
 }
 
 .go-back {
-  font-size: 15px;
+  font-size: 20px;
   color: white;
 }
 
@@ -139,7 +140,7 @@ header div button {
   padding: 10px;
   width: 100%;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -210,7 +211,6 @@ header div button {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #3778c2;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -219,16 +219,21 @@ body {
 .splash-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   height: 100vh;
+}
+
+.splash-container h2 {
+  margin-top: 65%;
+  font-family: cursive;
 }
 
 .header {
   margin-bottom: 20px;
-  background-color: #5fb523;
   border-radius: 30px;
   padding: 30px;
+  background-color: #3778c2;
 }
 
 .header h1 {
@@ -251,14 +256,18 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 120px;
   font-size: 18px;
-  background-color: #5fb523;
+  background-color: #3778c2;
   color: #fff;
   text-decoration: none;
   border: none;
   border-radius: 5px;
   margin: 10px;
+}
+
+.cta-buttons {
+  margin-bottom: 50px;
 }
 
 /* Sign-up form stlying */
@@ -316,4 +325,52 @@ body {
 
 .login-form .actions {
   margin-top: 20px;
+}
+
+.view-meal {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  align-items: center;
+}
+
+.view-meal p {
+  margin-left: 30px;
+}
+
+.view-meal-icon {
+  width: 100px;
+  height: 80px;
+}
+
+.view-meal-container {
+  height: 100%;
+}
+
+.view-meal-card {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 10px;
+}
+
+.order-details {
+  font-size: 15px;
+  border-bottom: 1px solid black;
+  text-align: start;
+  padding: 10px;
+}
+
+.order-details p {
+  color: grey;
+}
+
+.total-payment {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
 }

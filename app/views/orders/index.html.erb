@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
 <body class="home-page">
   <header>
     <div>
-      <p><%= link_to "Go back", meals_path, class: 'go-back' %></p>
+      <%= link_to "<i class='fas fa-arrow-left go-back'></i>".html_safe, root_path %>
+      <p>Details</p>
       <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
     </div>
   </header>
   
-  <% if @orders.sum(:amount) > 0 %>
-    <h3>Here are all your orders for this meal</h3>
-    <p>Total spent on this meal: $<%= @orders.sum(:amount) %></p>
-  <% else %>
+  <% if @orders.length == 0 %>
     <p>You haven't ordered this meal yet. Feel free to place an order below.</p>
   <% end %>
 
-  <section class="meal-container">
-    <% @orders.each do |order| %>
-      <div class="meal-card">
-        <div>
-              <%= image_tag order.meal.icon, alt: order.meal.name, class: "meal-icon" %>
-            </div>
-        <div>
-          <p><%= link_to order.meal.name, order.meal %></p>
-        </div>
-        <div>
-          <p>$<%= order.amount %></p>
-        </div>
+  <section class="view-meal-container">
+    <div class="view-meal-card">
+      <div class="view-meal">
+        <%= image_tag @meal.icon, alt: @meal.name, class: "view-meal-icon" %>
+        <p><%= link_to @meal.name, @meal %></p>
       </div>
-    <% end %>
+      <% @orders.each do |order| %>
+      <div class="order-details">
+        <p>Order #<%= order.id %></p>
+        <p>Ordered on <%= order.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+      <% end %>
+      <div class="total-payment">
+        <p>TOTAL PAYMENT</p>
+        <p>$<%= @orders.sum(:amount)%></p>
+      </div>
+    </div>
   </section>
 
   <p class="order-meal"><%= link_to "Order this meal", new_meal_order_path(@meal), class: 'order-meal-btn' %></p>
