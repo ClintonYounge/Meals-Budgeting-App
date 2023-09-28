@@ -9,11 +9,7 @@ services:
           name: my-database
           property: connectionString
     healthCheckPath: /healthcheck
-    automaticTLS: true
 
 databases:
   - name: my-database
     plan: postgres
-    env:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: myuser
