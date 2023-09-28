@@ -48,6 +48,7 @@
 - Pages to view all meals and orders.
 - Add Devise for Authentication
 - Add Cancancan for Authorization
+- Rspec and Integration tests.
 
 ## Getting Started
 
@@ -117,7 +118,6 @@ Run the `rspec` command in your console to run the tests.
 
 ## 🔭 Future Features <a name="future-features"></a>
 - Video presentation.
-- Rspec and Integration tests.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
