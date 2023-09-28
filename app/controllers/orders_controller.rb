@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :find_meal, only: %i[new create]
 
   def index
-    @orders = Order.where(meal_id: params[:meal_id])
+    @orders = Order.where(meal_id: params[:meal_id]).order(created_at: :desc)
     @meal = Meal.find_by(id: params[:meal_id])
   end
 
