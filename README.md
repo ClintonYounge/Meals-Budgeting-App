@@ -6,6 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
   - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -49,6 +50,15 @@
 - Add Devise for Authentication
 - Add Cancancan for Authorization
 - Rspec and Integration tests.
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- Live Demo Link coming soon.
+
+- Below is a link to my video presentation of the project.
+  - [My video presentation](https://www.loom.com/share/79a062a226004a76a3c9af9a72ae2bbc?sid=3f3e92c2-92e4-49c8-8e08-c42b911b7d4d)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
@@ -117,7 +127,7 @@ Run the `rspec` command in your console to run the tests.
 - Twitter: [@YoungeCjay](https://twitter.com/YoungeCjay)
 
 ## 🔭 Future Features <a name="future-features"></a>
-- Video presentation.
+- Deployed project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,6 +154,6 @@ I would like to give thanks to Microverse for providing an environment that make
 
 ## 📝 License <a name="license"></a>
 
-This project is [License](./MIT.md) licensed.
+This project is [License](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
