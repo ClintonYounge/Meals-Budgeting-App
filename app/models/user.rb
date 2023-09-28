@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :meals, foreign_key: :author_id, dependent: :destroy
   has_many :orders, foreign_key: :author_id, dependent: :destroy
+
+  def admin?
+    role == 'admin'
+  end
 end

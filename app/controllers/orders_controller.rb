@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  load_and_authorize_resource
+  
   before_action :find_meal, only: [:new, :create]
 
   def index

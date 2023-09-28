@@ -1,4 +1,6 @@
 class MealsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @meals = current_user.meals
   end
@@ -20,6 +22,12 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
+  end
+
+  def destroy
+    @meal = Meal.find(params[:id])
+    @meal.destroy
+    redirect_to meals_path
   end
 
   private
