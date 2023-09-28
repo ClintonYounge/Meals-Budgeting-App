@@ -1,5 +1,27 @@
-<h1>Welcome to Cjay's Restaurant Management App</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/splash.css">
+</head>
+<body class="splash-container">
+  <div class="header">
+    <h1>Welcome to the Meals Budgetting App</h1>
+  </div>
 
-<p>Here I'll help you keep track of your spending</p>
+  <p class="sign-message">Sign up below or login to proceed!</p>
 
-<p><%= link_to "Sign Up", new_user_registration_path %><%= link_to "Sign In", new_user_session_path %></p>
+  <div class="cta-buttons">
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
+    <%= link_to "Sign In", new_user_session_path, class: "btn" %>
+  </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      var signMessage = document.querySelector(".sign-message");
+      signMessage.style.opacity = "1";
+      signMessage.style.transform = "translateY(0)";
+    }, 1000);
+  });
+</script>
+</html>
