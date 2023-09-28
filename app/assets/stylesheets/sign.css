@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3778c2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  margin-bottom: 20px;
+  background-color: #5fb523;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.header h1 {
+  font-size: 36px;
+}
+
+.header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.sign-message {
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #5fb523;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* Sign-up form stlying */
+.signup-form {
+  margin-top: 20px;
+}
+
+.signup-form .field {
+  margin: 10px 0;
+}
+
+.signup-form label {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form .actions {
+  margin-top: 20px;
+}
+
+/* Styles for login form */
+.login-form {
+  margin-top: 20px;
+}
+
+.login-form .field {
+  margin: 10px 0;
+}
+
+.login-form label {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form .actions {
+  margin-top: 20px;
+}

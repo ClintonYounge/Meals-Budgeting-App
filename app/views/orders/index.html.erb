@@ -1,18 +1,40 @@
-<h1>Here are all your orders</h1>
-<p>Total spent: <%= @orders.sum(:amount) %></p>
-
-<section class="meal-container">
-  <% @orders.each do |order| %>
-    <div class="meal-card">
-      <div>
-        <h2><%= link_to order.meal.name, order.meal %></h2>
-      </div>
-      <div>
-        <h2>$<%= order.amount %></h2>
-      </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/assets/sign.css">
+  <link rel="stylesheet" type="text/css" href="/assets/orders.css">
+</head>
+<body class="home-page">
+  <header>
+    <div>
+      <p><%= link_to "Go back", meals_path, class: 'go-back' %></p>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
     </div>
+  </header>
+  
+  <% if @orders.sum(:amount) > 0 %>
+    <h3>Here are all your orders for this meal</h3>
+    <p>Total spent on this meal: $<%= @orders.sum(:amount) %></p>
+  <% else %>
+    <p>You haven't ordered this meal yet. Feel free to place an order below.</p>
   <% end %>
-</section>
 
-<p><%= link_to "Order this meal", new_meal_order_path(@meal) %></p>
-<p><%= link_to "Back", meals_path %></p>
+  <section class="meal-container">
+    <% @orders.each do |order| %>
+      <div class="meal-card">
+        <div>
+              <%= image_tag order.meal.icon, alt: order.meal.name, class: "meal-icon" %>
+            </div>
+        <div>
+          <p><%= link_to order.meal.name, order.meal %></p>
+        </div>
+        <div>
+          <p>$<%= order.amount %></p>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <p class="order-meal"><%= link_to "Order this meal", new_meal_order_path(@meal), class: 'order-meal-btn' %></p>
+</body>
+</html>
