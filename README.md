@@ -53,10 +53,10 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Live Demo Link coming soon.
+- [Live Demo Link](https://rails-gmyq.onrender.com/)
 
 - Below is a link to my video presentation of the project.
-  - [My video presentation](https://www.loom.com/share/79a062a226004a76a3c9af9a72ae2bbc?sid=3f3e92c2-92e4-49c8-8e08-c42b911b7d4d)
+  - [My video presentation](https://www.loom.com/share/d6ede818444e4168925bad7de6090d58?sid=cfdf9c2d-230e-4130-99d4-b9cef8ed861c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
