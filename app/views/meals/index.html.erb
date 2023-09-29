@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body class="home-page">
+    <header>
+        <div>
+          <p>Meals</p>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+        </div>
+    </header>
+
+    <section class="meal-container">
+      <% if @meals.length === 0 %>
+        <p class="no-meals">No meals yet! Feel free to add a meal.</p>
+      <% end %>
+      <% @meals.each do |meal| %>
+
+        <a href=<%= meal_orders_path(meal) %>>
+          <div class="meal-card">
+            <div>
+              <%= image_tag meal.icon, alt: meal.name, class: "meal-icon" %>
+            </div>
+
+            <div>
+              <p class="meal-name"><%= meal.name %></p>
+            </div>
+
+            <div>
+              <p class="meal-total">$<%= meal.orders.sum(:amount) %></p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </section>
+
+    <p class='new-meal'><%= link_to "New Meal", new_meal_path, class: 'new-meal-btn' %></p>
+  </body>
+</html>
+
+

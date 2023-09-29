@@ -1,15 +1,375 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  list-style: none;
+  color: black;
+  font-family: cursive;
+}
+
+.home-page {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #3778c2;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+header div {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+
+header div p {
+  color: white;
+  margin-right: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+header div button {
+  cursor: pointer;
+}
+
+.sign-out {
+  color: white;
+  background-color: #3778c2;
+  border: none;
+  font-size: 18px;
+}
+
+.meal-container {
+  margin-top: 30px;
+  height: 100%;
+}
+
+.meal-card {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.new-meal {
+  background-color: #5fb523;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.new-meal-btn {
+  border: 1px solid white;
+  color: white;
+  padding: 10px 120px;
+}
+
+.meal-icon {
+  width: 100px;
+  height: 80px;
+}
+
+.meal-name {
+  font-size: 15px;
+  color: #434b54;
+}
+
+.meal-total {
+  font-size: 20px;
+}
+
+.go-back {
+  font-size: 20px;
+  color: white;
+}
+
+.delete-meal-btn {
+  background-color: #5fb523;
+  color: white;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.overview {
+  text-align: center;
+}
+
+.no-meals {
+  font-size: 20px;
+  text-align: center;
+}
+
+.new-meal-form {
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-field {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.meal-submit {
+  margin: auto;
+}
+
+.meal-submit-btn,
+.order-meal-btn {
+  background-color: #5fb523;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.order-meal-btn {
+  background-color: #5fb523;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.order-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-field {
+  margin: 10px 0;
+}
+
+.form-label {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+.form-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.new-transaction-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #5fb523;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.splash-container h2 {
+  margin-top: 40vh;
+  font-family: cursive;
+}
+
+.header {
+  margin-bottom: 20px;
+  border-radius: 30px;
+  padding: 30px;
+  background-color: #3778c2;
+}
+
+.header h1 {
+  font-size: 36px;
+}
+
+.header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.sign-message {
+  font-size: 18px;
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 120px;
+  font-size: 18px;
+  background-color: #3778c2;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.cta-buttons {
+  margin-bottom: 50px;
+}
+
+/* Sign-up form stlying */
+.signup-form {
+  margin-top: 20px;
+}
+
+.signup-form .field {
+  margin: 10px 0;
+}
+
+.signup-form label {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form .actions {
+  margin-top: 20px;
+}
+
+/* Styles for login form */
+.login-form {
+  margin-top: 20px;
+}
+
+.login-form .field {
+  margin: 10px 0;
+}
+
+.login-form label {
+  font-size: 18px;
+  display: block;
+  text-align: left;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form .actions {
+  margin-top: 20px;
+}
+
+.view-meal {
+  display: flex;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  align-items: center;
+}
+
+.view-meal p {
+  margin-left: 30px;
+}
+
+.view-meal-icon {
+  width: 100px;
+  height: 80px;
+}
+
+.view-meal-container {
+  height: 100%;
+}
+
+.view-meal-card {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 10px;
+}
+
+.order-details {
+  font-size: 15px;
+  border-bottom: 1px solid black;
+  text-align: start;
+  padding: 10px;
+}
+
+.order-details p {
+  color: grey;
+}
+
+.total-payment {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+}

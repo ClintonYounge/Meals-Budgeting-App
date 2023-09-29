@@ -1,0 +1,28 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: Meals_Budgeting_App_development
+  pool: 5
+  host: localhost
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: Meals_Budgeting_App_test
+  pool: 5
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: Meals_Budgeting_App_production
+  pool: 5
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+
+staging:
+  url: <%= ENV['DATABASE_URL'] %>

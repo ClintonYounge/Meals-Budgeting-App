@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <%= stylesheet_link_tag 'application' %>
+  </head>
+  <body>
+    <header>
+        <div>
+          <p><%= link_to "Go back", meals_path, class: 'go-back' %></p>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+        </div>
+    </header>
+
+    <%= form_with model: @meal, class: 'new-meal-form', local: true do |form| %>
+      <div>
+        <%= form.text_field :name, placeholder: 'Name of the meal', class: 'input-field' %>
+      </div>
+      <div class="category-input">
+        <%= form.url_field :icon, class: 'input-field', placeholder: 'Put your image URL here' %>
+      </div>
+      <div class="meal-submit">
+        <%= form.submit "Create Meal", class: 'meal-submit-btn' %>
+      </div>
+    <% end %>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body class="home-page">
+  <header>
+    <div>
+      <p><%= link_to 'Back', meals_path, class: 'go-back' %></p>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+    </div>
+  </header>
+
+  <h1>Order this meal</h1>
+
+  <%= form_with(model: [@meal, @order], url: meal_orders_path(@meal), local: true, class: 'order-form') do |f| %>
+    <div class="form-field">
+      <%= f.text_field :name, placeholder: 'Put transaction name here', class: 'form-input' %>
+    </div>
+
+    <div class="form-field">
+      <%= f.text_field :amount, placeholder: 'Put your amount here', class: 'form-input' %>
+    </div>
+
+    <div class="form-field">
+      <%= f.submit 'Order Meal', class: 'new-transaction-button' %>
+    </div>
+  <% end %>
+</body>
+</html>

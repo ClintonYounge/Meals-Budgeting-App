@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="home-page">
+  <header>
+    <div>
+      <%= link_to "<i class='fas fa-arrow-left go-back'></i>".html_safe, root_path %>
+      <p>Details</p>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+    </div>
+  </header>
+  
+  <% if @orders.length == 0 %>
+    <p>You haven't ordered this meal yet. Feel free to place an order below.</p>
+  <% end %>
+
+  <section class="view-meal-container">
+    <div class="view-meal-card">
+      <div class="view-meal">
+        <%= image_tag @meal.icon, alt: @meal.name, class: "view-meal-icon" %>
+        <p><%= link_to @meal.name, @meal %></p>
+      </div>
+      <% @orders.each do |order| %>
+      <div class="order-details">
+        <p>Order #<%= order.id %>- Spent: $<%= order.amount %></p>
+        <p>Ordered on <%= order.created_at.strftime("%B %d, %Y") %></p>
+      </div>
+      <% end %>
+      <div class="total-payment">
+        <p>TOTAL PAYMENT</p>
+        <p>$<%= @orders.sum(:amount)%></p>
+      </div>
+    </div>
+  </section>
+
+  <p class="order-meal"><%= link_to "Order this meal", new_meal_order_path(@meal), class: 'order-meal-btn' %></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="home-page">
+  <header>
+    <div>
+      <%= link_to "<i class='fas fa-arrow-left go-back'></i>".html_safe, root_path %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'sign-out' %>
+    </div>
+  </header>
+
+  <div class='meal-container'>
+    <h2 class="overview">Meal Overview</h2>
+    <div class="meal-card">
+      <div>
+        <%= image_tag @meal.icon, alt: @meal.name, class: "meal-icon" %>
+      </div>
+      <div>
+        <h2><%= link_to @meal.name, @meal, class: 'meal-name' %></h2>
+      </div>
+      <div>
+        <h2>$<%= @meal.orders.sum(:amount) %></h2>
+      </div>
+    </div>
+  </div>
+
+  <%= button_to 'Delete Meal', meal_path(@meal), method: :delete, class: 'delete-meal-btn' %>
+</body>
+</html>
