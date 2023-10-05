@@ -6,6 +6,7 @@ databases:
 services:
   - type: web
     name: rails
+    plan: free
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
