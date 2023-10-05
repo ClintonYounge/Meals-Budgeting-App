@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def admin?
     role == 'admin'
   end
+
+  def as_json(options = {})
+    super(only: [:id, :name, :email])
+  end
 end
